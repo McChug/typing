@@ -9,6 +9,8 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --background: #fff;
+  --primary: #000;
 }
 
 body {
@@ -17,4 +19,35 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background: var(--background);
+  color: var(--primary);
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.keyboard-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.key {
+  /* size determined in component Key.tsx */
+  height: calc(100% - 8px);
+  border: 2px solid var(--primary);
+  margin: 2px;
+  border-radius: 14px;
+}
+
+.key-active {
+  background: var(--primary);
+  color: var(--background);
+  transform: scale(1.1);
+
+  transition: transform 0.3s linear;
 }

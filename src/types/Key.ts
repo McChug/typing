@@ -3,4 +3,5 @@ export interface Key {
   display: string;
   size: number;
   isActive: boolean;
+  displayVisible: boolean;
 }

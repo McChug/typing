@@ -15,10 +15,14 @@ function App() {
       const key = e.code;
       setActiveKeys((prev) => prev.filter((k) => k !== key));
     };
+    const handleBlur = () => {
+      setActiveKeys([]);
+    };
 
     return () => {
       document.addEventListener("keydown", handleKeyDown);
       document.addEventListener("keyup", handleKeyUp);
+      document.addEventListener("blur", handleBlur);
     };
   }, []);
 

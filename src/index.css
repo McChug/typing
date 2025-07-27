@@ -49,5 +49,5 @@ body {
   color: var(--background);
   transform: scale(1.1);
 
-  transition: transform 0.3s linear;
+  transition: transform 0.2s linear;
 }

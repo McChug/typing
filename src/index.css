@@ -42,12 +42,34 @@ body {
   border: 2px solid var(--primary);
   margin: 2px;
   border-radius: 14px;
+  z-index: 2;
 }
 
 .key-active {
+  z-index: 2;
   background: var(--primary);
   color: var(--background);
   transform: scale(1.1);
 
   transition: transform 0.2s linear;
+}
+
+.polyglow-container {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.polyglow.fade {
+  animation: fadeOut 1.8s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
 }

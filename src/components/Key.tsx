@@ -1,9 +1,25 @@
-import type { Key as KeyProps } from "../types/Key";
+import type KeyProps from "../types/KeyProps";
+import PolyglowContainer from "./PolyglowContainer";
 
 const Key = ({ display, size, isActive, displayVisible }: KeyProps) => {
-  const keySize = 3.5;
+  const emKeySize = 3.5;
+
   return (
-    <div style={{ height: `${keySize}em`, width: `${size * keySize}em` }}>
+    <div
+      style={{
+        height: `${emKeySize}em`,
+        width: `${size * emKeySize}em`,
+        position: "relative",
+      }}
+    >
+      {/* Glow effect inside polyglow component */}
+      <PolyglowContainer
+        emKeySize={emKeySize}
+        keySize={size}
+        isActive={isActive}
+      />
+
+      {/* Key */}
       <div className={isActive ? "key key-active" : "key"}>
         {displayVisible ? display : ""}
       </div>

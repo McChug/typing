@@ -1,4 +1,4 @@
-export interface Key {
+export default interface KeyProps {
   val: string;
   display: string;
   size: number;

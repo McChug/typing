@@ -1,8 +1,14 @@
+import { useEffect, useState } from "react";
 import type KeyProps from "../types/KeyProps";
 import PolyglowContainer from "./PolyglowContainer";
 
 const Key = ({ display, size, isActive, displayVisible }: KeyProps) => {
-  const emKeySize = 3.5;
+  const [emKeySize, setEmKeySize] = useState<number>(3.5);
+
+  useEffect(() => {
+    // placeholder for a future movement system
+    setEmKeySize(3.5);
+  }, []);
 
   return (
     <div

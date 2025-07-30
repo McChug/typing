@@ -61,15 +61,25 @@ body {
   pointer-events: none;
 }
 
+.polyglow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
 .polyglow.fade {
-  animation: fadeOut 1.8s ease-out forwards;
+  animation: fadeOut 1.5s ease-out forwards;
 }
 
 @keyframes fadeOut {
   0% {
     opacity: 1;
+    transform: translate(calc(-50% + var(--offset-x)), -50%)
+      rotate(var(--rotate));
   }
-  70% {
+  100% {
     opacity: 0;
+    transform: translate(calc(-50% + var(--offset-x)), -500%)
+      rotate(var(--rotate));
   }
 }

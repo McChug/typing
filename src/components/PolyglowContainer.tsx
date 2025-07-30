@@ -63,12 +63,12 @@ const PolyglowContainer = ({
           width={dimension}
           height={dimension}
           className="polyglow fade"
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: `translate(calc(-50% + ${offsetX}px), -50%) rotate(${rotate}deg)`,
-          }}
+          style={
+            {
+              "--offset-x": `${offsetX}px`,
+              "--rotate": `${rotate}deg`,
+            } as React.CSSProperties
+          }
         >
           <polygon points={points} fill={fill} />
         </svg>

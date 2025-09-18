@@ -2,7 +2,14 @@ import { useEffect, useState } from "react";
 import type KeyProps from "../types/KeyProps";
 import PolyglowContainer from "./PolyglowContainer";
 
-const Key = ({ display, size, isActive, displayVisible }: KeyProps) => {
+const Key = ({
+  display,
+  width,
+  sizeAdjust,
+  isActive,
+  displayVisible,
+  polyglowColor,
+}: KeyProps) => {
   const [emKeySize, setEmKeySize] = useState<number>(3.5);
 
   useEffect(() => {
@@ -13,15 +20,16 @@ const Key = ({ display, size, isActive, displayVisible }: KeyProps) => {
   return (
     <div
       style={{
-        height: `${emKeySize}em`,
-        width: `${size * emKeySize}em`,
+        height: `${emKeySize * sizeAdjust}em`,
+        width: `${width * emKeySize * sizeAdjust}em`,
         position: "relative",
       }}
     >
       {/* Glow effect inside polyglow component */}
       <PolyglowContainer
-        emKeySize={emKeySize}
-        keySize={size}
+        emKeySize={emKeySize * sizeAdjust}
+        color={polyglowColor}
+        keyWidth={width}
         isActive={isActive}
       />
 

@@ -4,8 +4,9 @@ import type PolyglowContainerProps from "../types/PolyglowContainerProps";
 
 const PolyglowContainer = ({
   emKeySize,
-  keySize,
+  keyWidth,
   isActive,
+  color,
 }: PolyglowContainerProps) => {
   const dimension = emKeySize * 35;
   const baseRadius = dimension / 2;
@@ -31,9 +32,11 @@ const PolyglowContainer = ({
       }
 
       const hue = Math.floor(Math.random() * 360);
-      const fill = `hsla(${hue}, 70%, 60%, 50%)`;
-      //const fill = `rgba(0,0,0,0.1)`;
-      const maxOffset = (keySize * emKeySize * 10) / 2;
+      let fill = `hsla(${hue}, 70%, 60%, 50%)`;
+      if (color !== "color") {
+        fill = `rgba(0,0,0,0.1)`;
+      }
+      const maxOffset = (keyWidth * emKeySize * 10) / 2;
       const offsetX = (Math.random() - 0.5) * maxOffset;
       const rotate = Math.random() * 360;
 

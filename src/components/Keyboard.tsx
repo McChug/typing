@@ -1,8 +1,9 @@
 import Key from "./Key";
 import qwertyLayout from "../qwerty/qwertyLayout";
 import { useState, useEffect } from "react";
+import type KeyboardProps from "../types/KeyboardProps";
 
-const Keyboard = () => {
+const Keyboard = ({polyglowColor, keySizeAdjust}: KeyboardProps) => {
   const displayVisible = false;
   const [activeKeys, setActiveKeys] = useState<string[]>([]);
 
@@ -36,9 +37,11 @@ const Keyboard = () => {
               key={`${i}-${j}`}
               val={key.val}
               display={key.display}
-              size={key.size}
+              width={key.size}
+              sizeAdjust={keySizeAdjust}
               isActive={activeKeys?.includes(key.code)}
               displayVisible={displayVisible}
+              polyglowColor={polyglowColor}
             />
           ))}
         </div>

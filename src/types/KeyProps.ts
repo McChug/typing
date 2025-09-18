@@ -1,7 +1,9 @@
 export default interface KeyProps {
   val: string;
   display: string;
-  size: number;
+  width: number;
+  sizeAdjust: number;
   isActive: boolean;
   displayVisible: boolean;
+  polyglowColor: string;
 }
